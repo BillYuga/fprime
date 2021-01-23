@@ -1,4 +1,5 @@
-# ===============================================================================
+#!/bin/env python
+#===============================================================================
 # NAME: Serialize.py.py
 #
 # DESCRIPTION:  This is an Serialize meta-model class.  It is
@@ -12,11 +13,14 @@
 #
 # Copyright 2013, California Institute of Technology.
 # ALL RIGHTS RESERVED. U.S. Government Sponsorship acknowledged.
-# ===============================================================================
+#===============================================================================
 #
 # Python standard modules
 #
 import logging
+import os
+import sys
+import time
 
 #
 # Python extention modules and custom interfaces
@@ -27,25 +31,14 @@ import logging
 # (DO NOT USE MANY!)
 #
 # Global logger init. below.
-PRINT = logging.getLogger("output")
-DEBUG = logging.getLogger("debug")
+PRINT = logging.getLogger('output')
+DEBUG = logging.getLogger('debug')
 #
-class Serialize:
+class Serialize(object):
     """
     This is a simple meta-model representation for generation of Serializable class types.
     """
-
-    def __init__(
-        self,
-        xml_filename,
-        name,
-        namespace,
-        comment,
-        xml_includes_list,
-        c_includes_list,
-        members_list,
-        type_id,
-    ):
+    def __init__(self, xml_filename, name, namespace, comment, xml_includes_list, c_includes_list, members_list, type_id):
         """
         Constructor
         @param xml_filename: name of original xml source file
@@ -67,24 +60,18 @@ class Serialize:
 
     def get_xml_filename(self):
         return self.__xml_filename
-
     def get_name(self):
         return self.__name
-
     def get_namespace(self):
         return self.__namespace
-
     def get_comment(self):
         return self.__comment
-
     def get_xml_includes(self):
         return self.__xml_includes_list
-
     def get_c_includes(self):
         return self.__c_includes_list
-
     def get_members(self):
         return self.__members_list
-
     def get_typeid(self):
         return self.__type_id
+

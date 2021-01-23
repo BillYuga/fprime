@@ -1,5 +1,5 @@
-\page SvcPrmDbComponent Svc::PrmDb Component
-# Svc::PrmDb Component
+<title>PrmDb Component SDD</title>
+# `Svc::PrmDb` Component
 
 ## 1. Introduction
 

@@ -1,5 +1,5 @@
-\page SvcRateGroupDriverComponent Svc::RateGroupDriver Component
-# Svc::RateGroupDriver Component
+<title>ActiveRateGroup Component SDD</title>
+# RateGroupDriver Component
 
 ## 1. Introduction
 

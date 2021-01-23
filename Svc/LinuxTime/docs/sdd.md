@@ -1,4 +1,4 @@
-\page SvcLinuxTimeComponent Svc::LinuxTime Component
+<title>Svc::LinuxTime</title>
 # Svc::LinuxTime Component
 
 ## 1. Introduction

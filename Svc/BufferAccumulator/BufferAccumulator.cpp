@@ -20,14 +20,17 @@ namespace Svc {
   // ----------------------------------------------------------------------
 
   BufferAccumulator ::
+#if FW_OBJECT_NAMES == 1
       BufferAccumulator(const char *const compName) :
-        BufferAccumulatorComponentBase(compName),
-        mode(DRAIN),
-        bufferMemory(NULL),
-        bufferQueue(),
-        send(true),
-        numWarnings(0),
-        allocatorId(0)
+          BufferAccumulatorComponentBase(compName), //!< The component name
+#else
+      BufferAccumulator() : BufferAccumulatorComponentBase(),
+#endif
+      mode(DRAIN),
+      bufferMemory(NULL),
+      bufferQueue(),
+      send(true),
+      numWarnings(0)
   {
 
   }
@@ -58,13 +61,9 @@ namespace Svc {
     )
   {
       this->allocatorId = identifier;
-      bool recoverable; // don't need to recover
-      NATIVE_UINT_TYPE actualSize = sizeof(Fw::Buffer) * maxNumBuffers;
       this->bufferMemory =  static_cast<Fw::Buffer*>(
-          allocator.allocate(identifier, actualSize, recoverable));
-      NATIVE_UINT_TYPE actualBuffers = actualSize/sizeof(Fw::Buffer);
-
-      bufferQueue.init(this->bufferMemory, actualBuffers);
+          allocator.allocate(identifier, sizeof(Fw::Buffer) * maxNumBuffers));
+      bufferQueue.init(this->bufferMemory, maxNumBuffers);
   }
 
   void BufferAccumulator ::

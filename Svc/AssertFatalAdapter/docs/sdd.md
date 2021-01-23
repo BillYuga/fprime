@@ -1,5 +1,5 @@
-\page SvcAssertFatalAdapterComponent Svc::AssertFatalAdapter Component
-# Svc::AssertFatalAdapter Component
+<title>AssertFatalAdapter Component SDD</title>
+# AssertFatalAdapter Component
 
 ## 1. Introduction
 

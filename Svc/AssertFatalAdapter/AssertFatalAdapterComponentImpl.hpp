@@ -30,7 +30,11 @@ namespace Svc {
       //! Construct object AssertFatalAdapter
       //!
       AssertFatalAdapterComponentImpl(
+#if FW_OBJECT_NAMES == 1
           const char *const compName /*!< The component name*/
+#else
+          void
+#endif
       );
 
       //! Initialize object AssertFatalAdapter

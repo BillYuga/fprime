@@ -40,9 +40,6 @@ namespace CFDP {
       //! Construct a Checksum object and initialize it with a value
       Checksum(const U32 value);
 
-      //! Copy a Checksum object
-      Checksum(const Checksum &original);
-
       //! Destroy a Checksum object
       ~Checksum();
 

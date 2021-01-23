@@ -11,7 +11,11 @@
 
 namespace Svc {
 
+    #if FW_OBJECT_NAMES == 1
     LinuxTimeImpl::LinuxTimeImpl(const char* name) : TimeComponentBase(name)
+    #else
+    LinuxTimeImpl::LinuxTimeImpl()
+    #endif
     {
     }
 

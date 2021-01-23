@@ -1,4 +1,6 @@
-header = """/*
+#!/usr/bin/env python
+
+header = '''/*
 * Author: Autocode Tools
 *
 * Code Generated Source Code Header
@@ -8,4 +10,4 @@ header = """/*
 *   acknowledged.
 *
 */
-"""
+'''

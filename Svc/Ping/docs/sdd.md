@@ -1,4 +1,5 @@
-\page SvcPingPort Svc::Ping Port
+<title>Svc::Ping Port SDD</title>
+
 # Svc::Ping Port
 
 ## 1. Introduction

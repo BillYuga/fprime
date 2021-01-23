@@ -7,7 +7,7 @@
  */
 #ifndef POLYDBCOMP_TESTER_HPP_
 #define POLYDBCOMP_TESTER_HPP_
-#include <FpConfig.hpp>
+#include <Fw/Cfg/Config.hpp>
 #include <Fw/Comp/PassiveComponentBase.hpp>
 
 

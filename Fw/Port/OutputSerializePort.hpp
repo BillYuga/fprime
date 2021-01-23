@@ -1,7 +1,7 @@
 #ifndef FW_OUTPUT_SERIALIZE_PORT_HPP
 #define FW_OUTPUT_SERIALIZE_PORT_HPP
 
-#include <FpConfig.hpp>
+#include <Fw/Cfg/Config.hpp>
 
 #if FW_PORT_SERIALIZATION == 1
 

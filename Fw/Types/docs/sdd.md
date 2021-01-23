@@ -1,5 +1,5 @@
-\page FwTypeClasses Fw::Type Classes and Types
-# Fw::Type Classes and Types
+<title>Fw::Types SDD</title>
+# Fw::Type Descriptions
 
 ## 1. Introduction
 

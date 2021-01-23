@@ -1,4 +1,4 @@
-\page SvcHealthComponent Svc::Health Component
+<title>Svc::Health Component SDD</title>
 # Svc::Health Component
 
 ## 1. Introduction

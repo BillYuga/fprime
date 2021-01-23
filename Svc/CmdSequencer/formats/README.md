@@ -1,5 +1,4 @@
-\page SvcCmdSequencerFormats Svc::CmdSequencer Formats
-# Svc::CmdSequencer Formats
+# Svc/CmdSequencer/formats
 
 This directory contains alternate format implementations for the command
 sequencer.

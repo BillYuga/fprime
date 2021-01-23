@@ -1,4 +1,5 @@
-# ===============================================================================
+#!/bin/env python
+#===============================================================================
 # NAME: GTestCppWriter.py
 #
 # DESCRIPTION: A writer for generating component gtest base implemetation files.
@@ -9,27 +10,19 @@
 #
 # Copyright 2015, California Institute of Technology.
 # ALL RIGHTS RESERVED. U.S. Government Sponsorship acknowledged.
-# ===============================================================================
-import sys
+#===============================================================================
 
 from fprime_ac.generators.writers import GTestWriterBase
-
-try:
-    from fprime_ac.generators.templates.gtest import cpp
-except ImportError:
-    print("ERROR: must generate python templates first.")
-    sys.exit(-1)
-
+from fprime_ac.generators.templates.gtest import cpp
 
 class GTestCppWriter(GTestWriterBase.GTestWriterBase):
     """
     A writer for generating component gtest base implemetation files.
     """
-
+    
     FILE_NAME = "GTestBase.cpp"
 
     def __init__(self):
-        super().__init__()
         self.initBase("GTestCpp")
 
     def emitCppParams(self, params):
@@ -42,9 +35,9 @@ class GTestCppWriter(GTestWriterBase.GTestWriterBase):
         c = cpp.cpp()
         self.initGTest(obj, c)
         c.emit_cpp_params = self.emitCppParams
-        c.file_message = '      << "  File:     " << __callSiteFileName << "\\n"\n'
-        c.line_message = '      << "  Line:     " << __callSiteLineNumber << "\\n"'
-        c.failure_message = '<< "\\n"\n' + c.file_message + c.line_message
+        c.file_message = "      << \"  File:     \" << __callSiteFileName << \"\\n\"\n"
+        c.line_message = "      << \"  Line:     \" << __callSiteLineNumber << \"\\n\""
+        c.failure_message = "<< \"\\n\"\n" + c.file_message + c.line_message
         c.LTLT = "<<"
         self._writeTmpl(c, "startSourceFilesWrite")
 

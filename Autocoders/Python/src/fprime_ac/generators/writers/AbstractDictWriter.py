@@ -1,4 +1,5 @@
-# ===============================================================================
+#!/bin/env python
+#===============================================================================
 # NAME: AbstractDictWriter.py
 #
 # DESCRIPTION: This is the abstract class inherited only by the writers who
@@ -10,25 +11,22 @@
 #
 # Copyright 2018, California Institute of Technology.
 # ALL RIGHTS RESERVED. U.S. Government Sponsorship acknowledged.
-# ===============================================================================
+#===============================================================================
 
-
-class AbstractDictWriter:
+class AbstractDictWriter(object):
     """
-    This abstract class defines the commonality between all autocoded
-    dictgen files.
-    """
-
+        This abstract class defines the commonality between all autocoded
+        dictgen files.
+        """
+    
     def __init__(self, model):
         """
-        @param cmd_tlm_data: Model containing all relevant data for template
-        """
+            @param cmd_tlm_data: Model containing all relevant data for template
+            """
         self.model = model
-
+    
     def write(self):
         """
-        Method defined by inheriting class that writes dictionary data into a specific file
-        """
-        raise NotImplementedError(
-            "# DictWriter.write() - you must supply your own concrete implementation."
-        )
+            Method defined by inheriting class that writes dictionary data into a specific file
+            """
+        raise '# DictWriter.write() - Implementation Error: you must supply your own concrete implementation.'

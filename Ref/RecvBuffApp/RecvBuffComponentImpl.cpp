@@ -9,8 +9,12 @@
 
 namespace Ref {
 
+#if FW_OBJECT_NAMES == 1    
     RecvBuffImpl::RecvBuffImpl(const char* compName) :
-            RecvBuffComponentBase(compName) {
+        RecvBuffComponentBase(compName) {
+#else
+    RecvBuffImpl::RecvBuffImpl() {
+#endif
         this->m_firstBuffReceived = 0;
         this->m_sensor1 = 1000.0;
         this->m_sensor2 = 10.0;

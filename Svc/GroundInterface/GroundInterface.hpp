@@ -9,7 +9,7 @@
 #ifndef GroundInterface_HPP
 #define GroundInterface_HPP
 
-#define GND_BUFFER_SIZE 1024
+#define GND_BUFFER_SIZE 512
 #define TOKEN_TYPE U32
 #define HEADER_SIZE (2 * sizeof(TOKEN_TYPE))
 
@@ -29,7 +29,11 @@ namespace Svc {
       //! Construct object GroundInterface
       //!
       GroundInterfaceComponentImpl(
+#if FW_OBJECT_NAMES == 1
           const char *const compName /*!< The component name*/
+#else
+          void
+#endif
       );
 
       //! Initialize object GroundInterface
@@ -80,8 +84,7 @@ namespace Svc {
       //!
       void frame_send(
           U8* data, /*!< Data to be framed and sent out */
-          TOKEN_TYPE size, /*!< Size of data in typed format */
-          TOKEN_TYPE packet_type = Fw::ComPacket::FW_PACKET_UNKNOWN /*!< Packet type override for anoymous data i.e. file downlink */
+          TOKEN_TYPE size /*!< Size of data in typed format */
       );
 
       //! Processes the out-going data into coms order

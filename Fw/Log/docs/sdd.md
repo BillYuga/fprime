@@ -1,5 +1,6 @@
-\page FwLogLogText Fw::Log / Fw::LogText Ports
-# Fw::Log / Fw::LogText Ports
+<title>Fw::Log/Fw::LogText Port SDD</title>
+
+# Fw::Log/LogText Ports
 
 ## 1. Introduction
 

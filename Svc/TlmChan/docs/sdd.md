@@ -1,5 +1,5 @@
-\page SvcTlmChanComponent Svc::TlmChan Component
-# Svc::TlmChan Component
+<title>TlmChan Component SDD</title>
+# TlmChan Component
 
 ## 1. Introduction
 

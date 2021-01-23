@@ -1,4 +1,4 @@
-\page RefRecvBuffAppComponent Ref::RecvBuffApp Component
+<title>Ref::RecvBuffApp</title>
 # Ref::RecvBuffApp Component
 
 ## 1. Introduction

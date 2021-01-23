@@ -1,5 +1,6 @@
-\page SvcFileUplinkComponent Svc::FileUplink Component
-# Svc::FileUplink Component
+<title>Svc::FileUplink</title>
+
+# Svc::FileUplink
 
 ## 1 Introduction
 

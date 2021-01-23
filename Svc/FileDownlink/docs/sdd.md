@@ -1,5 +1,6 @@
-\page SvcFileDownlinkComponent Svc::FileDownlink Component
-# Svc::FileDownlink Component
+<title>Svc::FileDownlink</title>
+
+# Svc::FileDownlink
 
 ## 1 Introduction
 

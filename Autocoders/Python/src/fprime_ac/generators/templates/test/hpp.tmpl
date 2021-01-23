@@ -245,11 +245,7 @@ $emit_hpp_port_params($params)
       //!
       typedef struct {
       #for $param_name, $param_type, $param_comment, $param_modifier, $param_enum in $params:
-        #if $param_modifier in ('*')
-          $param_type $param_modifier${param_name};
-        #else
-          $param_type ${param_name};
-        #end if
+        $param_type ${param_name};
       #end for
       } FromPortEntry_${instance};
 
@@ -715,7 +711,7 @@ $emit_hpp_port_params([ $param_callComp, $param_portNum] + $params)
   };
 
 #if $namespace_list != None
-  #for $namespace in $reversed($namespace_list)
+  #for $namespace in $namespace_list
 } // end namespace $namespace
   #end for
 #end if

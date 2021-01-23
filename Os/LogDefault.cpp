@@ -7,4 +7,3 @@
  */
 #include <Os/Log.hpp>
 Os::Log __default_logger__; // Create a default instance which will register itself in the constructor
-

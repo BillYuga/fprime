@@ -16,6 +16,7 @@ namespace Fw {
 
 namespace Fw {
 
+#if FW_OBJECT_NAMES == 1    
     PortBase::PortBase()
                 :
                 Fw::ObjBase(0),
@@ -27,6 +28,19 @@ namespace Fw {
     {
         
     }
+#else // no object names
+    PortBase::PortBase()
+                :
+                Fw::ObjBase(),
+                m_connObj(0)
+#if FW_PORT_TRACING == 1     
+                ,m_trace(false),
+                m_override_trace(false)
+#endif                
+    {
+        
+    }
+#endif
     
     PortBase::~PortBase(void) {
         

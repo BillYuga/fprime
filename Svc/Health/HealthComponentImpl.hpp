@@ -53,7 +53,11 @@ namespace Svc {
             //!  The constructor for Health
             //!
             //!  \param compName component name
-            HealthImpl(const char * const compName);
+            HealthImpl(
+#if FW_OBJECT_NAMES == 1
+                    const char * const compName //!< The component name
+#endif
+                    );
 
             //!  \brief HealthImpl initialization function
             //!

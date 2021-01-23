@@ -1,4 +1,4 @@
-#include <FpConfig.hpp>
+#include <Fw/Cfg/Config.hpp>
 #include <Fw/Types/BasicTypes.hpp>
 #include <Os/File.hpp>
 #include <Fw/Types/Assert.hpp>
@@ -80,10 +80,6 @@ namespace Os {
     }
 
     File::Status File::open(const char* fileName, File::Mode mode) {
-      return this->open(fileName, mode, true);
-    }
-
-    File::Status File::open(const char* fileName, File::Mode mode, bool include_excl) {
 
         if (openInterceptor) {
             File::Status stat;

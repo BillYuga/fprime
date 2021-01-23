@@ -9,8 +9,12 @@ namespace Svc {
 		
 	public:
 
-		// Only called by derived class 
+		// Only called by derived class
+#if FW_OBJECT_NAMES == 1	    
 	    ConsoleTextLoggerImpl(const char* compName);
+#else
+        ConsoleTextLoggerImpl();
+#endif
 	    void init(void);
 		~ConsoleTextLoggerImpl(void);
 		

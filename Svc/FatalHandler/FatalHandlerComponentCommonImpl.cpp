@@ -21,9 +21,14 @@ namespace Svc {
   // ----------------------------------------------------------------------
 
   FatalHandlerComponentImpl ::
+#if FW_OBJECT_NAMES == 1
     FatalHandlerComponentImpl(
         const char *const compName
-    ) : FatalHandlerComponentBase(compName)
+    ) :
+      FatalHandlerComponentBase(compName)
+#else
+    FatalHandlerImpl(void)
+#endif
   {
 
   }

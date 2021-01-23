@@ -1,4 +1,4 @@
-"""
+'''
 @brief Base class for all Loaders. Defines the Loader interface
 
 Loaders are responsible for reading dictionaries autocoded during the fprime
@@ -16,21 +16,20 @@ The base class will return empty dictionaries for any path.
 @author R. Joseph Paetz
 
 @bug No known bugs
-"""
+'''
 
-
-class DictLoader:
-    """
+class DictLoader(object):
+    '''
     Base class for all loader classes. Defines the loader interface
 
     Example:
         l = DictLoader  # Or any other derived loader class
         id_dict = l.get_id_dict(path)       # May take a second or two
         name_dict = l.get_name_dict(path)   # Returns immediately
-    """
+    '''
 
     def __init__(self):
-        """
+        '''
         Constructor
 
         The base class constructor sets up the machinery so that id and name
@@ -39,11 +38,12 @@ class DictLoader:
 
         Returns:
             An initialized loader object
-        """
+        '''
         self.saved_dicts = dict()
 
+
     def get_id_dict(self, path):
-        """
+        '''
         Returns the python dictionary keyed by ids for the given path
 
         This function will return the same dictionary originally computed for
@@ -57,8 +57,8 @@ class DictLoader:
 
         Returns:
             The id dictionary associated with the given path
-        """
-        if path in self.saved_dicts:
+        '''
+        if (path in self.saved_dicts):
             (id_dict, name_dict) = self.saved_dicts[path]
         else:
             (id_dict, name_dict) = self.construct_dicts(path)
@@ -66,8 +66,9 @@ class DictLoader:
 
         return id_dict
 
+
     def get_name_dict(self, path):
-        """
+        '''
         Returns the python dictionary keyed by names for the given path
 
         This function will return the same dictionary originally computed for
@@ -82,8 +83,8 @@ class DictLoader:
 
         Returns:
             The name dictionary associated with the given path
-        """
-        if path in self.saved_dicts:
+        '''
+        if (path in self.saved_dicts):
             (id_dict, name_dict) = self.saved_dicts[path]
         else:
             (id_dict, name_dict) = self.construct_dicts(path)
@@ -91,8 +92,9 @@ class DictLoader:
 
         return name_dict
 
+
     def construct_dicts(self, path):
-        """
+        '''
         Constructs and returns python dictionaries keyed on id and name.
 
         This function should only be overwritten by inheritting classes if
@@ -106,5 +108,6 @@ class DictLoader:
             have keys of the id and name fields respectively and the values
             for both should be data_template classes. This base class only
             returns empty dictionaries.
-        """
+        '''
         return (dict(), dict())
+

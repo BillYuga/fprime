@@ -21,10 +21,15 @@ namespace Svc {
   // ----------------------------------------------------------------------
 
   LinuxTimerComponentImpl ::
+#if FW_OBJECT_NAMES == 1
     LinuxTimerComponentImpl(
         const char *const compName
-    ) : LinuxTimerComponentBase(compName),
-        m_quit(false)
+    ) :
+      LinuxTimerComponentBase(compName)
+#else
+    LinuxTimerImpl(void)
+#endif
+    ,m_quit(false)
   {
 
   }

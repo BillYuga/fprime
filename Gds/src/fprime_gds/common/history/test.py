@@ -6,8 +6,8 @@ retrieval operations
 
 :author: koran
 """
-from fprime_gds.common.history.history import History
 from fprime_gds.common.testing_fw import predicates
+from fprime_gds.common.history.history import History
 
 
 class TestHistory(History):
@@ -15,8 +15,6 @@ class TestHistory(History):
     A receive-ordered history to support the GDS test api. This history adds support for specifying
     start with predicates and python's bracket notation.
     """
-
-    __test__ = False
     ###########################################################################
     #   History Functions
     ###########################################################################
@@ -39,16 +37,16 @@ class TestHistory(History):
 
         self.retrieved_cursor = 0
 
-    def data_callback(self, data, sender=None):
+    def data_callback(self, data_object):
         """
         Data callback to push an object on the history. This callback will only add data_objects
         that satisfy the filter predicate.
 
         Args:
-            data: object to store
+            data_object: object to store
         """
-        if self.filter(data):
-            self.objects.append(data)
+        if self.filter(data_object):
+            self.objects.append(data_object)
 
     def retrieve(self, start=None):
         """

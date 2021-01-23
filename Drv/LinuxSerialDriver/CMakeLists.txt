@@ -37,20 +37,16 @@ else()
 		"${CMAKE_CURRENT_LIST_DIR}/LinuxSerialDriverComponentImplCommon.cpp"
 	)
 endif()
-set(MOD_DEPS
-    Os
-)
 
 register_fprime_module()
 
 ### UTs ###
-# Note: this UT expects user input
-#set(UT_MOD_DEPS
-#    Os
-#)
-#set(UT_SOURCE_FILES
-#  "${CMAKE_CURRENT_LIST_DIR}/LinuxSerialDriverComponentAi.xml"
-#  "${CMAKE_CURRENT_LIST_DIR}/test/ut/main.cpp"
-#  "${CMAKE_CURRENT_LIST_DIR}/test/ut/Tester.cpp"
-#)
-#register_fprime_ut()
+set(UT_MOD_DEPS
+    Os
+)
+set(UT_SOURCE_FILES
+  "${CMAKE_CURRENT_LIST_DIR}/LinuxSerialDriverComponentAi.xml"
+  "${CMAKE_CURRENT_LIST_DIR}/test/ut/main.cpp"
+  "${CMAKE_CURRENT_LIST_DIR}/test/ut/Tester.cpp"
+)
+register_fprime_ut()

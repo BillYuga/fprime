@@ -32,16 +32,21 @@ namespace Svc {
   // ----------------------------------------------------------------------
 
   UdpReceiverComponentImpl ::
+#if FW_OBJECT_NAMES == 1
     UdpReceiverComponentImpl(
         const char *const compName
-    ) : UdpReceiverComponentBase(compName),
-        m_fd(-1),
-        m_packetsReceived(0),
-        m_bytesReceived(0),
-        m_packetsDropped(0),
-        m_decodeErrors(0),
-        m_firstSeq(true),
-        m_currSeq(0)
+    ) :
+      UdpReceiverComponentBase(compName)
+#else
+    UdpReceiverImpl(void)
+#endif
+    ,m_fd(-1)
+    ,m_packetsReceived(0)
+    ,m_bytesReceived(0)
+    ,m_packetsDropped(0)
+    ,m_decodeErrors(0)
+    ,m_firstSeq(true)
+    ,m_currSeq(0)
   {
 
   }

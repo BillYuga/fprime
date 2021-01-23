@@ -185,8 +185,7 @@ namespace Os {
 
     }
 
-    // Note: not implemented for Posix threads. Must be manually done using a mutex or other blocking construct as there
-    // is not top-level pthreads support for suspend and resume.
+    // FIXME: Need to find out how to do this for Posix threads
 
     void Task::suspend(bool onPurpose) {
         FW_ASSERT(0);
@@ -199,11 +198,6 @@ namespace Os {
     bool Task::isSuspended(void) {
         FW_ASSERT(0);
         return false;
-    }
-
-    TaskId Task::getOsIdentifier(void) {
-        TaskId T;
-        return T;
     }
 
     Task::TaskStatus Task::join(void **value_ptr) {
