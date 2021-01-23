@@ -12,13 +12,14 @@ F´ comprises several elements:
 
 ## Quick Installation Guide
 
-F´ can be quickly install using the following instructions. F´ requires that the following utilities be installed: cmake, git, and Python 3 with pip. Once these have been installed, users are 
+F´ can be quickly install using the following instructions. F´ requires that the following utilities be installed: cmake, git, and Python 3.5+ with pip. Once these have been installed, users are 
 recommended to install F´ python dependencies. This is usually done in a Python virtual environment as this prevents issues at the system level, but is not required. Full installation instructions
-including virtual environment creation, installation verification, and support for Python 2 is available: [INSTALL.md](./docs/INSTALL.md). The following are the most basic steps for convenience.
+including virtual environment creation, and installation verification: [INSTALL.md](./docs/INSTALL.md). The following are the most basic steps for convenience.
 
 ```
 git clone https://github.com/nasa/fprime.git
 cd fprime
+pip install --upgrade wheel setuptools pip
 pip install Fw/Python Gds/
 ```
 
@@ -99,7 +100,7 @@ The typed port connections provide strong compile-time guarantees of correctness
 #### Release 1.2
 
 * Better MagicDraw Plugin
-* Prototype CMake build system. See: [CMake Readme](cmake/README.md)
+* Prototype CMake build system. See: [CMake Documentation](./docs/UsersGuide/cmake/cmake-intro.md)
 * Mars Helicopter Project fixes migrated in
 * Python 3 support added
 * Gse refactored and renamed to Gds
@@ -116,4 +117,44 @@ The typed port connections provide strong compile-time guarantees of correctness
 * Better ground interface component
 * Integration test API
 * Baremetal components
+
+#### Release 1.4
+
+* Ref app no longer hangs on Linux exit
+* GDS improvements:
+  * File Uplink and Downlink implemented
+  * GDS supports multiple active windows
+  * Usability improvements for EVRs and commands
+* CMake improvements:
+  * Baremetal compilation supported
+  * Random rebuilding fixed
+  * Missing Cheetah templates properly rebuild
+  * Separate projects supported without additional tweaks
+* Updated MemAllocator to have:
+  * "recoverable" flag to indicate if memory was recoverable across boots
+  * size variable is now modifiable by allocator to indicate actual size
+  * This will break existing code that uses MemAllocator
+* Updated CmdSequencer
+  * Uses new MemAllocator interface  
+
+#### Release 1.5
+
+* Documentation improvements
+  * New user's guide containing considerable content: [https://nasa.github.io/fprime/UsersGuide/guide.html](https://nasa.github.io/fprime/UsersGuide/guide.html)
+  * Auto-generated API documentation
+  * Rewrites, edits, improvements across the board
+* F´ Project restructuing
+  * Projects may now link to F´ and F´ library packges, without needing to keep the framework code in the same source tree
+  * Usage of framework can be out-of-source
+  * `settings.ini` Introduced
+  * Example: [https://github.com/fprime-community/fprime-arduino](https://github.com/fprime-community/fprime-arduino)
+* Refactored `fprim-util`
+  * Replaced redundant targets with flags e.g. build-ut is now build --ut
+  * Added `info` command
+  * Bug and usability fixes
+* GDS Improvments
+  * Prototype GDS CLI tool
+  * Project custom dashboard support
+* Array, Enum type support and examples
+* Code linting and bug fixes
 

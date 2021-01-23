@@ -2,7 +2,7 @@
 title: "F´ A Flight Software and Embedded Systems Framework"
 layout: default
 ---
-F´ is a software framework for rapidly development and deployment of embedded systems and spaceflight applications.
+F´ is a software framework for rapid development and deployment of embedded systems and spaceflight applications.
 Originally developed at NASA's Jet Propulsion Laboratory, F´ is open source software that has been successfully deployed
 for several space applications. It has been used for, but is not limited to, CubeSats, SmallSats, instruments, and
 deployables.
@@ -20,6 +20,7 @@ F´ has the following features:
 | Projects  | [Projects](./projects.md) |
 | Installation | [INSTALL.md](./INSTALL.md) | 
 | Tutorials | [Tutorials](./Tutorials/README.md) |
+| User Guide | [User Guide](./UsersGuide/guide.md) |
 | Repository | [https://github.com/nasa/fprime](https://github.com/nasa/fprime) |
 | Community Forum and Mailing List | [https://groups.google.com/d/forum/fprime-community](https://groups.google.com/d/forum/fprime-community) |
 | Community GitHub Organization | [https://github.com/fprime-community](https://github.com/fprime-community) |
@@ -29,7 +30,7 @@ F´ has the following features:
 
 ## F´ System Requirements
 
-In order to develop applications with F´ the following requirements of the user's system must be met.
+In order to develop applications with F´, the following requirements of the user's system must be met.
 
 1. Linux or Mac OS X operating system (or Windows Subsystem for Linux on Windows)
 2. CMake [https://cmake.org/download/](https://cmake.org/download/) available on the system path
@@ -48,6 +49,7 @@ virtual environment), and building on of our reference applications. For full in
 ```
 git clone https://github.com/nasa/fprime.git
 cd fprime
+pip install --upgrade wheel setuptools pip
 pip install Fw/Python Gds/
 ```
 **Build the Ref Application**
