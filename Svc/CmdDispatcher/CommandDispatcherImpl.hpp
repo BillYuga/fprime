@@ -16,7 +16,7 @@
 
 #include <Svc/CmdDispatcher/CommandDispatcherComponentAc.hpp>
 #include <Os/Mutex.hpp>
-#include <CommandDispatcherImplCfg.hpp>
+#include <Svc/CmdDispatcher/CommandDispatcherImplCfg.hpp>
 
 namespace Svc {
 
@@ -38,7 +38,11 @@ namespace Svc {
             //!  are initialized.
             //!
             //!  \param name the component instance name
+#if FW_OBJECT_NAMES == 1
             CommandDispatcherImpl(const char* name);
+#else
+            CommandDispatcherImpl();
+#endif
             //!  \brief Component initialization routine
             //!
             //!  The initialization function calls the initialization

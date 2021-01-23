@@ -11,11 +11,13 @@
 #include <stdio.h>
 
 namespace Svc {
+#if FW_OBJECT_NAMES == 1
     CommandDispatcherImpl::CommandDispatcherImpl(const char* name) :
         CommandDispatcherComponentBase(name),
-        m_seq(0),
-        m_numCmdsDispatched(0),
-        m_numCmdErrors(0)
+#else
+    CommandDispatcherImpl::CommandDispatcherImpl() :
+#endif
+    m_seq(0), m_numCmdsDispatched(0), m_numCmdErrors(0)
     {
         memset(this->m_entryTable,0,sizeof(this->m_entryTable));
         memset(this->m_sequenceTracker,0,sizeof(this->m_sequenceTracker));

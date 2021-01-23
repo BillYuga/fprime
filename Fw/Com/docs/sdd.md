@@ -1,4 +1,4 @@
-\page FwComPort Fw::Com Port
+<title>Fw::Com Port SDD</title>
 # Fw::Com Port
 
 ## 1. Introduction

@@ -20,10 +20,16 @@ namespace Ref {
   // Construction, initialization, and destruction 
   // ----------------------------------------------------------------------
 
-  PingReceiverComponentImpl :: 
+  PingReceiverComponentImpl ::
+#if FW_OBJECT_NAMES == 1
     PingReceiverComponentImpl(
         const char *const compName
-    ) : PingReceiverComponentBase(compName), m_inhibitPings(false), m_pingsRecvd(0)
+    ) :
+      PingReceiverComponentBase(compName)
+#else
+    PingReceiverImpl(void)
+#endif
+    ,m_inhibitPings(false),m_pingsRecvd(0)
   {
 
   }

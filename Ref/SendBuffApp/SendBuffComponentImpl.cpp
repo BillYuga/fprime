@@ -10,8 +10,13 @@
 
 namespace Ref {
 
+#if FW_OBJECT_NAMES == 1    
     SendBuffImpl::SendBuffImpl(const char* compName) :
         SendBuffComponentBase(compName) {
+#else
+    SendBuffImpl::SendBuffImpl() {
+
+#endif
         this->m_currPacketId = 0;
         this->m_invocations = 0;
         this->m_buffsSent = 0;

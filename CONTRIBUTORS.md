@@ -1,7 +1,6 @@
 JPL Contributors to the F' Software Framework:
 
 * Adams, Derek
-* Anderson, Joshua
 * Bocchino, Robert
 * Campuzano, Brian
 * Canham, Timothy
@@ -11,10 +10,8 @@ JPL Contributors to the F' Software Framework:
 * Daruwala, Rohan
 * Daugherty, Daniel
 * Day, Leonard
-* Deerin, Jake
 * Dinkel, Jack
 * Dinkel, Kevin
-* Duerschmid, Tobias
 * Gandhi, Gorang
 * Gangianpour, Mehran
 * Harriman, Blake
@@ -27,14 +24,13 @@ JPL Contributors to the F' Software Framework:
 * Kubiak, Gerik
 * Levison, Jeffrey
 * Manglapus, Lloyd
-* Merewether, Eugene
 * Mueller, David
+* Merewether, Eugene
 * Nicolich, Eric
 * Nowicki, Robert
 * Oran, Kevin
 * Ortega, Kevin
 * Pandian, Prashanth 
-* Paulson, Hunter
 * Ramanan, Saikiran
 * Reder, Leonard
 * Rizvi, Aadil
@@ -43,7 +39,6 @@ JPL Contributors to the F' Software Framework:
 * Starch, Michael
 * Perez, Joseph
 * Shenker, Boris
-* Smith, Celeste
 * Tuszynski, Marek
 * Uchenik, Igor
 * Watney, Garth
@@ -52,10 +47,6 @@ JPL Contributors to the F' Software Framework:
 * Wong, Vincent
 
 Non-JPL Contributors to the F' Software Framework:
-
-* AaronMcDaniel
 * acxz
 * jasonduley
 * keck-in-space
-* sommercharles
-* SterlingPeet

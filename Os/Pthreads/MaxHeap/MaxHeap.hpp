@@ -10,9 +10,6 @@
 //
 // ======================================================================
 
-#ifndef OS_PTHREADS_MAX_HEAP_HPP
-#define OS_PTHREADS_MAX_HEAP_HPP
-
 #include "Fw/Types/BasicTypes.hpp"
 
 namespace Os {
@@ -112,5 +109,3 @@ namespace Os {
   };
 
 }
-
-#endif // OS_PTHREADS_MAX_HEAP_HPP

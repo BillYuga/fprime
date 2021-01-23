@@ -93,7 +93,7 @@ namespace Fw {
           U32 sequenceIndex;
           
           //! Header size
-          enum { HEADERSIZE = sizeof(U8) + sizeof(U32) };
+          enum { HEADERSIZE = sizeof(U8) + sizeof(sequenceIndex) };
 
         PRIVATE:
 
@@ -179,8 +179,8 @@ namespace Fw {
 
           //! header size
           enum { HEADERSIZE = Header::HEADERSIZE +
-              sizeof(U32) +
-              sizeof(U16) };
+              sizeof(byteOffset) +
+              sizeof(dataSize) };
 
 
         public:
@@ -189,7 +189,7 @@ namespace Fw {
           void initialize(
               const U32 sequenceIndex, //!< The sequence index
               const U32 byteOffset, //!< The byte offset
-              const U16 dataSize, //!< The data size
+              const U32 dataSize, //!< The data size
               const U8 *const data //!< The file data
           );
 

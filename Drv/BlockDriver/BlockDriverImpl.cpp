@@ -4,12 +4,16 @@
 
 namespace Drv {
 
+#if FW_OBJECT_NAMES == 1
     BlockDriverImpl::BlockDriverImpl(const char* compName) :
-        BlockDriverComponentBase(compName), m_cycles(0)
+        BlockDriverComponentBase(compName)
+#else
+    BlockDriverImpl::BlockDriverImpl()
+#endif
+    ,m_cycles(0)
     {
 
     }
-
     void BlockDriverImpl::init(NATIVE_INT_TYPE queueDepth) {
         BlockDriverComponentBase::init(queueDepth);
     }

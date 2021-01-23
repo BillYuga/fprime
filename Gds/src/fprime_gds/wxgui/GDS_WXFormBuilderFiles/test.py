@@ -1,5 +1,5 @@
-import GDSMainFrameImpl
 import wx
+import GDSMainFrameImpl
 
 app = wx.App(False)
 frame = GDSMainFrameImpl.MainFrameImpl(None)

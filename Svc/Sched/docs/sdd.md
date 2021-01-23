@@ -1,4 +1,4 @@
-\page SvcSchedPort Svc::Sched Port
+<title>Svc::Sched Port SDD</title>
 # Svc::Sched Port
 
 ## 1. Introduction

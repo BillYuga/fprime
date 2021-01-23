@@ -1,4 +1,4 @@
-#include <FpConfig.hpp>
+#include <Fw/Cfg/Config.hpp>
 #include <Fw/Types/BasicTypes.hpp>
 #include <Os/File.hpp>
 #include <Fw/Types/Assert.hpp>
@@ -37,9 +37,6 @@ namespace Os {
     }
 
     File::Status File::open(const char* fileName, File::Mode mode) {
-      return this->open(fileName, mode, true);
-    }
-    File::Status File::open(const char* fileName, File::Mode mode, bool include_excl) {
 
         NATIVE_INT_TYPE flags = 0;
         Status stat = OP_OK;
@@ -54,7 +51,6 @@ namespace Os {
             case OPEN_SYNC_WRITE:
                 flags = O_WRONLY | O_CREAT | O_SYNC;
                 break;
-#ifndef TGT_OS_TYPE_RTEMS
             case OPEN_SYNC_DIRECT_WRITE:
                 flags = O_WRONLY | O_CREAT | O_DSYNC
 #ifdef __linux__
@@ -63,12 +59,8 @@ namespace Os {
                 ;
 #endif
                 break;
-#endif
             case OPEN_CREATE:
                 flags = O_WRONLY | O_CREAT | O_TRUNC;
-                break;
-            case OPEN_APPEND:
-                flags = O_WRONLY | O_CREAT | O_APPEND;
                 break;
             default:
                 FW_ASSERT(0,(NATIVE_INT_TYPE)mode);
@@ -104,10 +96,6 @@ namespace Os {
         this->m_mode = mode;
         this->m_fd = fd;
         return stat;
-    }
-
-    bool File::isOpen(void) {
-      return this->m_fd > 0;
     }
 
     File::Status File::prealloc(NATIVE_INT_TYPE offset, NATIVE_INT_TYPE len) {

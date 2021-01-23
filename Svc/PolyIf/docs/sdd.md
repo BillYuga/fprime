@@ -1,4 +1,4 @@
-\page SvcPolyPort Svc::Poly Port
+<title>Svc::Poly Port SDD</title>
 # Svc::Poly Port
 
 ## 1. Introduction

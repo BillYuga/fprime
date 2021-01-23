@@ -1,4 +1,5 @@
-\page SvcWatchDogPort Svc::WatchDog Port
+<title>Svc::WatchDog Port SDD</title>
+
 # Svc::WatchDog Port
 
 ## 1. Introduction

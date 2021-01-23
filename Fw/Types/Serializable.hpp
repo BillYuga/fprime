@@ -140,12 +140,9 @@ namespace Fw {
         PROTECTED:
 
             SerializeBufferBase(); //!< default constructor
-
-        PRIVATE:
-            // A no-implementation copy constructor here will prevent the default copy constructor from being called
-            // accidentally, and without an implementation it will create an error for the developer instead.
             SerializeBufferBase(const SerializeBufferBase &src); //!< constructor with buffer as source
 
+        PRIVATE:
             void copyFrom(const SerializeBufferBase& src); //!< copy data from source buffer
             NATIVE_UINT_TYPE m_serLoc; //!< current offset in buffer of serialized data
             NATIVE_UINT_TYPE m_deserLoc; //!< current offset for deserialization

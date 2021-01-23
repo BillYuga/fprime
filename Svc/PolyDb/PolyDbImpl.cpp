@@ -10,7 +10,11 @@
 #include <Fw/Types/BasicTypes.hpp>
 
 namespace Svc {
+#if FW_OBJECT_NAMES == 1
     PolyDbImpl::PolyDbImpl(const char* name) : PolyDbComponentBase(name) {
+#else
+    PolyDbImpl::PolyDbImpl() {
+#endif
         // initialize all entries to stale
         for (NATIVE_INT_TYPE entry = 0; entry < POLYDB_NUM_DB_ENTRIES; entry++) {
             this->m_db[entry].status = MEASUREMENT_STALE;

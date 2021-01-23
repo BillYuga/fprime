@@ -1,4 +1,5 @@
-\page SvcBufferManagerComponent Svc::BufferManager Component
+<title>Svc::BufferManager</title>
+
 # Svc::BufferManager
 
 ## 1 Introduction

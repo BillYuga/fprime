@@ -1,7 +1,7 @@
 #ifndef FW_OUTPUT_PORT_BASE_HPP
 #define FW_OUTPUT_PORT_BASE_HPP
 
-#include <FpConfig.hpp>
+#include <Fw/Cfg/Config.hpp>
 
 #include <Fw/Obj/ObjBase.hpp>
 #include <Fw/Types/BasicTypes.hpp>

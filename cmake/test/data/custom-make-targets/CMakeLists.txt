@@ -20,7 +20,6 @@
 ##
 project(UT-Custom-Target C CXX)
 cmake_minimum_required(VERSION 3.5)
-set(FPRIME_PROJECT_ROOT "${CMAKE_CURRENT_LIST_DIR}/../../../.." CACHE PATH "Root path of F prime project" FORCE)
 
 
 ##

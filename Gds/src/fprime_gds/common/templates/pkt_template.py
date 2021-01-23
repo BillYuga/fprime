@@ -1,4 +1,4 @@
-"""
+'''
 @brief Packet Template class
 
 Instances of this class describe a telemetry packet. For example an instance may
@@ -9,18 +9,19 @@ describe the packet with ID 5 and channels A, B, and C in that order.
 @author R. Joseph Paetz
 
 @bug No known bugs
-"""
+'''
+from __future__ import absolute_import
 
-from fprime.common.models.serialize.type_exceptions import TypeMismatchException
+from . import data_template
+from . import ch_template
 
-from . import ch_template, data_template
-
+from fprime.common.models.serialize.type_exceptions import *
 
 class PktTemplate(data_template.DataTemplate):
-    """Class to create packet templates to describe specific packet types"""
+    '''Class to create packet templates to describe specific packet types'''
 
     def __init__(self, pkt_id, pkt_name, ch_temp_list):
-        """
+        '''
         Constructor
 
         Args:
@@ -30,23 +31,24 @@ class PktTemplate(data_template.DataTemplate):
                          describing the channels included in the packer. The
                          order of the list is the order of the channels in the
                          packet.
-        """
-        super().__init__()
-        if not isinstance(pkt_id, int):
-            raise TypeMismatchException(int, type(pkt_id))
+        '''
+        # TODO is this check necessary
+        if not type(pkt_id) == type(int()):
+            raise TypeMismatchException(type(int()), type(pkt_id))
 
-        if not isinstance(pkt_name, str):
-            raise TypeMismatchException(str, type(pkt_name))
+        if not type(pkt_name) == type(str()):
+            raise TypeMismatchException(type(str()), type(pkt_name))
 
-        if not isinstance(ch_temp_list, list):
-            raise TypeMismatchException(list, type(ch_temp_list))
+        if not type(ch_temp_list) == type(list()):
+            raise TypeMismatchException(type(list()), type(ch_temp_list))
 
         for ch in ch_temp_list:
             if not isinstance(ch, ch_template.ChTemplate):
-                raise TypeMismatchException(type(ch_template.ChTemplate), type(ch))
+                raise TypeMismatchException(type(ch_template.ChTemplate),
+                                            type(ch))
 
-        self.id = pkt_id
-        self.name = pkt_name
+        self.id      = pkt_id
+        self.name    = pkt_name
         self.ch_list = ch_temp_list
 
     def get_id(self):
@@ -57,3 +59,4 @@ class PktTemplate(data_template.DataTemplate):
 
     def get_ch_list(self):
         return self.ch_list
+

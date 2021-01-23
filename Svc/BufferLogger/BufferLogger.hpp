@@ -158,7 +158,9 @@ namespace Svc {
 
       //! Create a BufferLogger object
       BufferLogger(
+#if FW_OBJECT_NAMES == 1
           const char *const compName /*!< The component name*/
+#endif
       );
 
       //! Initialize a BufferLogger object

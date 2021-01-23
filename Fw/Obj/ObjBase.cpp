@@ -1,4 +1,4 @@
-#include <FpConfig.hpp>
+#include <Fw/Cfg/Config.hpp>
 #include <Fw/Obj/ObjBase.hpp>
 #include <string.h>
 #include <stdio.h>
@@ -9,7 +9,7 @@ namespace Fw {
     ObjRegistry* ObjBase::s_objRegistry = 0;
 #endif    
 
-#if FW_OBJECT_NAMES == 1
+#if FW_OBJECT_NAMES
     ObjBase::ObjBase(const char* objName) {
         if (0 == objName) {
             this->setObjName("NoName");
@@ -18,10 +18,11 @@ namespace Fw {
         }
     }
 #else
-    ObjBase::ObjBase(const char* objName) {
-
+    
+    ObjBase::ObjBase() {
+        
     }
-#endif
+#endif    
    
     void ObjBase::init(void) {
 #if FW_OBJECT_REGISTRATION        

@@ -1,4 +1,4 @@
-\page SvcCmdDispatcherComponent Svc::CmdDispatcher Component
+<title>Svc::CmdDispatcher Component SDD</title>
 # Svc::CmdDispatcher Component
 
 ## 1. Introduction

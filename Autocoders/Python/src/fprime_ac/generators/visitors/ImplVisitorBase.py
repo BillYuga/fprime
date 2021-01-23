@@ -1,4 +1,5 @@
-# ===============================================================================
+#!/bin/env python
+#===============================================================================
 # NAME: ImplVisitorBase.py
 #
 # DESCRIPTION: A base class for Impl visitors
@@ -9,10 +10,9 @@
 #
 # Copyright 2015, California Institute of Technology.
 # ALL RIGHTS RESERVED. U.S. Government Sponsorship acknowledged.
-# ===============================================================================
+#===============================================================================
 
 from fprime_ac.generators.visitors import ComponentVisitorBase
-
 
 class ImplVisitorBase(ComponentVisitorBase.ComponentVisitorBase):
     """
@@ -23,3 +23,4 @@ class ImplVisitorBase(ComponentVisitorBase.ComponentVisitorBase):
         self.init(obj, c)
         c.component_base = c.name() + "ComponentBase"
         c.impl = c.name() + "Impl"
+

@@ -1,5 +1,6 @@
-\page FwBufferSerializableBufferGetBufferSend Fw::Buffer Serializable / Fw::BufferGet Port / Fw::BufferSend Port
-# Fw::Buffer Serializable / Fw::BufferGet Port / Fw::BufferSend Port
+<title>Fw/Buffer</title>
+
+# Fw/Buffer
 
 ## 1 Introduction
 

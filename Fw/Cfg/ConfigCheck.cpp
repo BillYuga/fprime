@@ -10,7 +10,7 @@
  *
  */
 
-#include <FpConfig.hpp>
+#include <Fw/Cfg/Config.hpp>
 #include <Fw/Types/BasicTypes.hpp>
 
 // Check that command/telemetry strings are not larger than an argument buffer

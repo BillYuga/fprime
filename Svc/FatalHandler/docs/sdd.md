@@ -1,4 +1,4 @@
-\page SvcFatalHandlerComponent Svc::FatalHandler Component
+<title>Svc::FatalHandler Component SDD</title>
 # Svc::FatalHandler Component
 
 ## 1. Introduction

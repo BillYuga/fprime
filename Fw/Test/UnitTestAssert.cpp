@@ -3,8 +3,6 @@
  *
  *  Created on: Feb 8, 2016
  *      Author: tcanham
- *  Revised July 2020
- *      Author: bocchino
  */
 
 #include <Fw/Test/UnitTestAssert.hpp>
@@ -13,40 +11,19 @@
 
 namespace Test {
 
-#if FW_ASSERT_LEVEL == FW_FILEID_ASSERT
-    const UnitTestAssert::File UnitTestAssert::fileInit = 0;
-#else
-    const UnitTestAssert::File UnitTestAssert::fileInit = "";
-#endif
+    UnitTestAssert::UnitTestAssert() {
 
-    UnitTestAssert::UnitTestAssert() :
-      m_file(fileInit),
-      m_lineNo(0),
-      m_numArgs(0),
-      m_arg1(0),
-      m_arg2(0),
-      m_arg3(0),
-      m_arg4(0),
-      m_arg5(0),
-      m_arg6(0),
-      m_assertFailed(false)
-    {
         // register this hook
         Fw::AssertHook::registerHook();
     }
 
     UnitTestAssert::~UnitTestAssert() {
-        // deregister the hook
-        Fw::AssertHook::deregisterHook();
+        // deregister hook
+        Fw::AssertHook::registerHook();
     }
 
     void UnitTestAssert::doAssert(void) {
-        this->m_assertFailed = true;
-#if FW_ASSERT_LEVEL == FW_FILEID_ASSERT
-        (void)fprintf(stderr,"Assert File: 0x%x, Line: %u\n", this->m_file, this->m_lineNo);
-#else
-        (void)fprintf(stderr,"Assert File: %s, Line: %u\n", this->m_file.toChar(), this->m_lineNo);
-#endif
+        (void)fprintf(stderr,"Assert File: %d, Line: %d\n", this->m_file, this->m_lineNo);
     }
 
     void UnitTestAssert::reportAssert(
@@ -61,10 +38,11 @@ namespace Test {
             AssertArg arg6
             ) {
 
+        //printf("Test Assert Called!\n");
 #if FW_ASSERT_LEVEL == FW_FILEID_ASSERT
         this->m_file = file;
 #else
-        this->m_file = reinterpret_cast<const char*>(file);
+        memcpy(this->m_file,file,sizeof(this->m_file));
 #endif
         this->m_lineNo = lineNo;
         this->m_numArgs = numArgs;
@@ -79,7 +57,7 @@ namespace Test {
     }
 
     void UnitTestAssert::retrieveAssert(
-                    File& file,
+                    FILE_NAME_ARG& file,
                     NATIVE_UINT_TYPE& lineNo,
                     NATIVE_UINT_TYPE& numArgs,
                     AssertArg& arg1,
@@ -88,9 +66,9 @@ namespace Test {
                     AssertArg& arg4,
                     AssertArg& arg5,
                     AssertArg& arg6
-                    ) const {
+                    ) {
 
-        file = this->m_file;
+        file = (U8*)this->m_file;
         lineNo = this->m_lineNo;
         numArgs = this->m_numArgs;
         arg1 = this->m_arg1;
@@ -99,14 +77,6 @@ namespace Test {
         arg4 = this->m_arg4;
         arg5 = this->m_arg5;
         arg6 = this->m_arg6;
-    }
-
-    bool UnitTestAssert::assertFailed() const {
-        return this->m_assertFailed;
-    }
-
-    void UnitTestAssert::clearAssertFailure() {
-        this->m_assertFailed = false;
     }
 
 } /* namespace Test */

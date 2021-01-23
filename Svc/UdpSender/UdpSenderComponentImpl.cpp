@@ -29,13 +29,18 @@ namespace Svc {
   // ----------------------------------------------------------------------
 
   UdpSenderComponentImpl ::
+#if FW_OBJECT_NAMES == 1
     UdpSenderComponentImpl(
         const char *const compName
-    ) : UdpSenderComponentBase(compName),
-        m_fd(-1),
-        m_packetsSent(0),
-        m_bytesSent(0),
-        m_seq(0)
+    ) :
+      UdpSenderComponentBase(compName)
+#else
+    UdpSenderImpl(void)
+#endif
+    ,m_fd(-1)
+    ,m_packetsSent(0)
+    ,m_bytesSent(0)
+    ,m_seq(0)
   {
 
   }

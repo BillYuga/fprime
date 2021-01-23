@@ -26,8 +26,13 @@ namespace Svc {
     // ----------------------------------------------------------------------
 
     CmdSequencerComponentImpl::
+#if FW_OBJECT_NAMES == 1
       CmdSequencerComponentImpl(const char* name) :
         CmdSequencerComponentBase(name),
+#else
+      CmdSequencerComponentImpl(void) :
+        CmdSequencerComponentBase(),
+#endif
         m_FPrimeSequence(*this),
         m_sequence(&this->m_FPrimeSequence),
         m_loadCmdCount(0),
@@ -60,9 +65,9 @@ namespace Svc {
 
     void CmdSequencerComponentImpl ::
       allocateBuffer(
-          const NATIVE_INT_TYPE identifier,
+          NATIVE_INT_TYPE identifier,
           Fw::MemAllocator& allocator,
-          const NATIVE_UINT_TYPE bytes
+          NATIVE_UINT_TYPE bytes
       )
     {
         this->m_sequence->allocateBuffer(identifier, allocator, bytes);

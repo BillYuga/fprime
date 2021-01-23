@@ -7,8 +7,7 @@
 ####
 set(SOURCE_FILES
 	"${CMAKE_CURRENT_LIST_DIR}/SocketIpDriverComponentAi.xml"
-    "${CMAKE_CURRENT_LIST_DIR}/SocketIpDriverComponentImpl.cpp"
-    "${CMAKE_CURRENT_LIST_DIR}/SocketHelper.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/SocketIpDriverComponentImpl.cpp"
 )
 
 register_fprime_module()

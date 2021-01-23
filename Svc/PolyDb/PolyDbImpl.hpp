@@ -14,7 +14,7 @@
 
 #include <Svc/PolyDb/PolyDbComponentAc.hpp>
 #include <Fw/Types/PolyType.hpp>
-#include <PolyDbImplCfg.hpp>
+#include <Svc/PolyDb/PolyDbImplCfg.hpp>
 
 namespace Svc {
 
@@ -37,8 +37,11 @@ namespace Svc {
             //!  update is received.
             //!
 
+#if FW_OBJECT_NAMES == 1
             PolyDbImpl(const char* name);
-
+#else
+            PolyDbImpl();
+#endif
             //!  \brief PolyDbImpl initialization
             //!
             //!  The PolyDbImpl initialization function calls the base

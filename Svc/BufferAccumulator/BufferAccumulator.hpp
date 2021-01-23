@@ -95,7 +95,9 @@ namespace Svc {
       //! Construct BufferAccumulator instance
       //!
       BufferAccumulator(
+#if FW_OBJECT_NAMES == 1
           const char *const compName /*!< The component name*/
+#endif
       );
 
       //! Initialize BufferAccumulator instance

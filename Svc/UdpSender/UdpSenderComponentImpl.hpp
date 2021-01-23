@@ -14,7 +14,7 @@
 #define UdpSender_HPP
 
 #include <Svc/UdpSender/UdpSenderComponentAc.hpp>
-#include <UdpSenderComponentImplCfg.hpp>
+#include <Svc/UdpSender/UdpSenderComponentImplCfg.hpp>
 #include <sys/socket.h>
 #include <arpa/inet.h>
 
@@ -34,7 +34,11 @@ namespace Svc {
       //! Construct object UdpSender
       //!
       UdpSenderComponentImpl(
+#if FW_OBJECT_NAMES == 1
           const char *const compName /*!< The component name*/
+#else
+          void
+#endif
       );
 
       //! Initialize object UdpSender
